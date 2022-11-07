@@ -6,6 +6,7 @@ class interface
 {
     private:
     enum MODE { MENU = 1, BUILD = 2, SIMULATE = 3 };
+    struct button { int x; int y; int w; int h; std::string MO; };
     MODE modes;
     int mouseControl[2];
     screen* mainScreen;
@@ -15,9 +16,20 @@ class interface
     void updateSIMULATE();
 
     void update();
-    void getInput();
+    bool getInput();
 
-   
+    int mDIMENSIONX = 17;
+    int mDIMENSIONY = 5;
+    int mLENGTH = 40;
+    int mHEIGHT = 20;
+    
+ 
+    std::vector<std::string> labels = {"BUILD", "SIMULATE"};
+    std::vector<button> buttons;
+
+    void createMenu();
+    int findButton();
+    
 
     public:
     void start();

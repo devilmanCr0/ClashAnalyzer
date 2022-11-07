@@ -1,3 +1,4 @@
+#pragma once
 #include "shapes.h"
 
 class square : public shapes
@@ -34,9 +35,13 @@ class square : public shapes
 				{
 					addPixel(k, i, '|');	
 				} 
-				else if( k==0 || k == dimensionX -1)
+				else if(k==0)
 				{
 					addPixel(k, i, '_');
+				} 
+				else if(k == dimensionX -1)
+				{
+					addPixel(k, i, '-');
 				}
 
 			}

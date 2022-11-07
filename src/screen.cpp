@@ -10,13 +10,14 @@ screen::screen()
 screen::~screen()
 {
    //maybe more cleanup later
+
    endwin();
 }
 
 
 void screen::initialize()
 {
-       // std::cout <<" hello loser"<<std::endl;
+       // MAIN PROCESS - PART OF NCURSES;
 	noecho();
    	clear();
    	getmaxyx(stdscr, this->dimensionY, this->dimensionX);
@@ -34,6 +35,7 @@ void screen::initialize()
 
 bool screen::recieveMouse()
 {
+	// NCURSES CAPABILITY
 	int mouseUpdate = getch();
 	
 	if(mouseUpdate == KEY_MOUSE)

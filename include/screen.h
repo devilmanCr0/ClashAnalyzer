@@ -1,7 +1,6 @@
 #pragma once
 #include <ncurses.h>
 
-
 #include<iostream>
 #include<deque>
 #include"troops.h"
